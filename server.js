@@ -89,7 +89,7 @@ app.get('/get-user-data',async(req, res)=>{
 
     return res.status(200).send(`-1`)}
     catch (err) {
-      res.status(500).json({ error: 'Internal server error.' })};
+      res.status(500).json({ err })};
 })
 
 
@@ -129,7 +129,7 @@ app.post('/place-tile', async (req, res) => {
     res.status(200).json({ message: 'Tile placed successfully.' });
 
   } catch (err) {
-    res.status(500).json({ error: 'Internal server error.' });
+    res.status(500).json({ err });
   }
 });
 
