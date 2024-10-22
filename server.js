@@ -84,7 +84,7 @@ app.get('/get-user-data',async(req, res)=>{
       return res.status(200).send(`-1`)
     }
     if (lastPlacementTime && currentTime - lastPlacementTime < COOLDOWN_PERIOD) {
-      return res.status(200).send(`${currentTime-lastPlacementTime}`);
+      return res.status(200).send(`${COOLDOWN_PERIOD-currentTime+lastPlacementTime}`);
     }
 
     return res.status(200).send(`-1`)}

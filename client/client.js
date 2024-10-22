@@ -40,9 +40,13 @@ const applicationParameters = {
   width: 1000,
   height: 1000,
   pallete: [
-    0xFFF2F4F5, 0xFF1A1B1C ,  0xFF425430,  0xFF74ED6F,  0xFFC4B02D,  0xFFA63417,  0xFF4A1538,  0xFF631482,    0xFFA727D9,    0xFF133766, 0xFF2F95FA   , 0xFF747678,   0xFF2032BD,  0xFF0E1CE8,    0xFF24FFFB,    0xFF009BA3
-  ],
-  palleteHex: [`#f5f4f2`, `#1c1b1a`,`#305442`, `#6fed74`,`#2db0c4`, `#1734a6`,`#38154a`, `#821463`,`#d927a7`, `#663713`,`#fa952f`, `#787674`,`#bd3220`, `#e81c0e`,`#fbff24`, `#a39b00`],
+    0xFFF7F7F7, 0xFF000000, 0xFF318802, 0xFF439D8A, 0xFFE3C058, 0xFFA63417,
+    0xFF4A1538, 0xFF631482, 0xFFA79FC1, 0xFF133766, 0xFF2F95FA, 0xFF7D7D7D,
+    0xFF2032BD, 0xFF0E1CE8, 0xFF24FFFB, 0xFF009BA3
+],
+  palleteHex: ['#F7F7F7', '#000000', '#028831', '#8A9D43', '#58C0E3', '#1734a6',
+    '#38154a', '#821463', '#C19FA7', '#663713', '#fa952f', '#7D7D7D',
+    '#bd3220', '#e81c0e', '#fbff24', '#a39b00'],
   timerTimeStep:1000,
   minScaleReticle:8,
   zoom:{
@@ -84,7 +88,7 @@ async function inputManager(canvasManagerInstance,requestManagerInstance){
 }
 
   function updatePixel(username, tileDetails){
-    if (reticleState.x<0 || reticleState.y <0){return}
+    if (reticleState.x<0 || reticleState.y <0 || timeDiv.textContent.length!=0) {return}
     requestManagerInstance.updatePixel(username,tileDetails)
     updateTimer()
   }
