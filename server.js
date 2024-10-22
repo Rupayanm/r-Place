@@ -13,7 +13,7 @@ const __dirname = path.dirname(__filename)
 
 const cassandraClient = new Client({
   cloud: {
-    secureConnectBundle: "C:/Users/rupay/Downloads/secure-connect-place.zip", 
+    secureConnectBundle: "./secure-connect-place.zip", 
   },
   credentials: {
     username: process.env.CASS_USERNAME, 
